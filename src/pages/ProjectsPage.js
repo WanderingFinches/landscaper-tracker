@@ -6,6 +6,10 @@ function ProjectsPage() {
         { id: 2, name: 'Garden Installation', hourlyRate: 60, flateRate: 800 },
     ]);
 
+    const [newName, setNewName] = useState('');
+    const [newHourlyRate, setNewHourlyRate] = useState('');
+    const [newFlatRate, setNewFlatRate] = useState('');
+
     return (
         <div>
             <h2>Projects</h2>
@@ -13,15 +17,24 @@ function ProjectsPage() {
                 <input
                     type="text"
                     placeholder="Project Name"
+                    value={newName}
+                    onChange={(e) => setNewName(e.target.value)}
                 />
+
                 <input
                     type="number"
                     placeholder="Hourly Rate"
+                    value={newHourlyRate}
+                    onChange={(e) => setNewHourlyRate(e.target.value)}
                 />
+
                 <input
                     type="number"
                     placeholder="Flat Rate"
+                    value={newFlatRate}
+                    onChange={(e) => setNewFlatRate(e.target.value)}
                 />
+
                 <button type="submit">Add Project</button>
             </form>
             <ul>
