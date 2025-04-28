@@ -10,10 +10,29 @@ function ProjectsPage() {
     const [newHourlyRate, setNewHourlyRate] = useState('');
     const [newFlatRate, setNewFlatRate] = useState('');
 
+    const handleAddProject = (e) => {
+        e.preventDefault(); // Stops page refresh
+    
+
+        const newProject = {
+            id: projects.length + 1,
+            name: newName,
+            hourlyRate: Number(newHourlyRate),
+            flatRate: Number(newFlatRate),
+        };
+
+        setProjects([...projects, newProject]);
+
+        // Clear the form after adding
+        setNewName('');
+        setNewHourlyRate('');
+        setNewFlatRate('');
+    };
+
     return (
         <div>
             <h2>Projects</h2>
-            <form>
+            <form onSubmit={handleAddProject}>
                 <input
                     type="text"
                     placeholder="Project Name"
