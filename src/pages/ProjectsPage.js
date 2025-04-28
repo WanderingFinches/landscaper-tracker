@@ -9,6 +9,21 @@ function ProjectsPage() {
     return (
         <div>
             <h2>Projects</h2>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Project Name"
+                />
+                <input
+                    type="number"
+                    placeholder="Hourly Rate"
+                />
+                <input
+                    type="number"
+                    placeholder="Flat Rate"
+                />
+                <button type="submit">Add Project</button>
+            </form>
             <ul>
                 {projects.map((project) => (
                     <li key={project.id}>
