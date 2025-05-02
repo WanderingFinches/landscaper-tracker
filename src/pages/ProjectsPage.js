@@ -2,8 +2,24 @@ import React, { useState } from 'react';
 
 function ProjectsPage() {
     const [projects, setProjects] = useState([
-        { id: 1, name: 'Backyard Cleanup', hourlyRate: 50, flateRate: 400 },
-        { id: 2, name: 'Garden Installation', hourlyRate: 60, flateRate: 800 },
+        { 
+            id: 1,
+            name: 'Backyard Cleanup',
+            hourlyRate: 50,
+            flatRate: 400,
+            isClockIn: false,
+            startTime: null,
+            timeWorked: 0,
+        },
+        {
+            id: 2,
+            name: 'Garden Installation',
+            hourlyRate: 60,
+            flateRate: 800,
+            isClockedIn: false,
+            startTime: null,
+            timeWorked: 0,
+        },
     ]);
 
     const [newName, setNewName] = useState('');
